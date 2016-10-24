@@ -1,18 +1,58 @@
+<!--
+Creator: DC Team
+Last Edited by: Brianna
+Location: SF
+-->
+
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
 # Local Authentication with Express and Passport
 
-## Learning Objectives
+### Why is this important?
+<!-- framing the "why" in big-picture/real world examples -->
+*This workshop is important because:*
 
-- Create a login form with email & password
-- Use passport-local to find a user & verify their password
-- Restrict access to API without an authenticated user
+Controlling access to data is a key part of many modern web applications. Rails does a lot of the work of authentication and authorization for us behind the scenes.  Today we'll see that Rails's "local" (in-app) authentication strategy generalizes to other languages and frameworks. We'll use a library called Passport, for Node.js, and we'll specifically dive into its `passport-local` implementation.  
 
-## Preparation
 
-- Create an express application and add CRUD/REST resources
-- Create a Mongoose Model
-- Describe an authentication model
+### What are the objectives?
+<!-- specific/measurable goal for students to achieve -->
+*After this workshop, developers will be able to:*
 
-## Passport and the logics - Intro (5 mins)
+* Explain key steps of a framework-independent local authentication strategy.
+* Authenticate users with a "local" strategy with the Passport library.
+* Restrict access to data based on whether a user is authenticated.
+* Describe alternate authentication or authorization strategies.
+
+### Where should we be now?
+<!-- call out the skills that are prerequisites -->
+*Before this workshop, developers should already be able to:*
+
+* Implement client-side forms and AJAX calls.
+* Create an express application with RESTful routes.
+* Set up schemas and models with Mongoose.
+* CRUD data in a MongoDB database through Mongoose.  
+* Describe the authentication strategy used with `has_secure_password` from Ruby on Rails.
+
+
+## Passport - Intro (5 mins)
+
+From the [passport website](http://passportjs.org/docs):
+
+"_Passport is authentication middleware for Node. It is designed to serve a singular purpose: authenticate requests. When writing modules, encapsulation is a virtue, so Passport delegates all other functionality to the application. This separation of concerns keeps code clean and maintainable, and makes Passport extremely easy to integrate into an application.
+
+In modern web applications, authentication can take a variety of forms. Traditionally, users log in by providing a username and password. With the rise of social networking, single sign-on using an OAuth provider such as Facebook or Twitter has become a popular authentication method. Services that expose an API often require token-based credentials to protect access.
+
+Passport recognizes that each application has unique authentication requirements. Authentication mechanisms, known as strategies, are packaged as individual modules. Applications can choose which strategies to employ, without creating unnecessary dependencies._"
+
+#### Check for Understanding
+
+1. What language and/or framework(s) is Passport meant for?  
+1. What are Passport's main selling points?  
+1. What are some ways that websites manage authentication?   
+
+
+## Passport - Intro (5 mins)
 
 From the [passport website](http://passportjs.org/docs):
 
